@@ -43,7 +43,7 @@ studentsData =  [
     },
     {
         "name": "Bob Johnson",
-        "age": 22,
+        "age": 11,
         "contact": "234-567-8901",
         "email": "bob.johnson@example.com"
     },
@@ -61,7 +61,7 @@ studentsData =  [
     },
     {
         "name": "Edward Davis",
-        "age": 23,
+        "age": 17,
         "contact": "567-890-1234",
         "email": "edward.davis@example.com"
     },
@@ -73,7 +73,7 @@ studentsData =  [
     },
     {
         "name": "George Wilson",
-        "age": 22,
+        "age": 18,
         "contact": "789-012-3456",
         "email": "george.wilson@example.com"
     },
@@ -87,21 +87,19 @@ studentsData =  [
         "name": "Ian Martinez",
         "age": 20,
         "contact": "901-234-5678",
-        "email": "ian.martinez@example.com"
+        "email": "ian.martinez@example.com" 
     },
     {
         "name": "Jessica Taylor",
-        "age": 23,
+        "age": 15,
         "contact": "012-345-6789",
         "email": "jessica.taylor@example.com"
     },
 ]
 
 
+
 def index(request):
-    return render(request, "firstapp/index.html", {"data" : studentsData})
-
-
-
+    return render(request, "firstapp/index.html",{ "studentsData": studentsData})
 
 

@@ -4,17 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index page</title>
+
+    <style>
+        td, th{
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>this is h1 heading....</h1>
 
     <table>
         <thead>
+            <th>S.no</th>
             <th>Name</th>
             <th>age</th>
             <th>Contact</th>
             <th>Email</th>
+            <th>Voter Eligibility</th>
         </thead>
+        <tbody>
+            {% for student in studentsData %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.age}}</td>
+                    <td>{{student.contact}}</td>
+                    <td>{{student.email}}</td>
+
+                    {% if student.age >= 18 %}
+                        <td>Eligible</td>
+
+                    {% else %}
+                        <td style="color: red;">Not Eligible</td>
+                    
+                    {% endif %}
+
+                </tr>
+            {% endfor %}
+        </tbody>
 
         
     </table>
