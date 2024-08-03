@@ -1,0 +1,31 @@
+<table class="table table-success table-striped">
+    <thead>
+        <th>S.no</th>
+        <th>Name</th>
+        <th>age</th>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>Voter Eligibility</th>
+    </thead>
+    <tbody>
+        {% for student in studentsData %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.age}}</td>
+                <td>{{student.contact}}</td>
+                <td>{{student.email}}</td>
+
+                {% if student.age >= 18 %}
+                    <td>Eligible</td>
+
+                {% else %}
+                    <td style="color: red;">Not Eligible</td>
+                
+                {% endif %}
+
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>

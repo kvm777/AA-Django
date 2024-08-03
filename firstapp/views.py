@@ -95,6 +95,24 @@ studentsData =  [
         "contact": "012-345-6789",
         "email": "jessica.taylor@example.com"
     },
+    {
+        "name": "Kevin Thompson",
+        "age": 19,
+        "contact": "123-456-7890",
+        "email": "kevin.thompson@example.com"
+    },
+    {
+        "name": "Lisa Wilson",
+        "age": 20,
+        "contact": "234-567-8901",
+        "email": "lisa.wilson@example.com"
+    },
+    {
+        "name": "Michael Johnson",
+        "age": 22,
+        "contact": "345-678-9012",
+        "email": "michael.johnson@example.com"
+    }
 ]
 
 
@@ -102,4 +120,14 @@ studentsData =  [
 def index(request):
     return render(request, "firstapp/index.html",{ "studentsData": studentsData})
 
+
+def main(request):
+    return render(request, "firstapp/main.html")
+
+
+def home(request):
+    return render(request, "firstapp/home.html")
+
+def about(request):
+    return render(request, "firstapp/about.html")
 
