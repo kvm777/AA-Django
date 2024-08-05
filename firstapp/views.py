@@ -126,7 +126,7 @@ def main(request):
 
 
 def home(request):
-    return render(request, "firstapp/home.html")
+    return render(request, "firstapp/home.html",{ "studentsData": studentsData})
 
 def about(request):
     return render(request, "firstapp/about.html")

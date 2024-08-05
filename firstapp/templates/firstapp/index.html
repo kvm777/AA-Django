@@ -8,8 +8,12 @@
 
 </head>
 <body class="text-danger">
-    {% block content %}
+    
+    {% include "firstapp/navbar.html" %}
 
+    {% block content %}
+    
+        {% include "firstapp/table.html" %}
 
     {% endblock %}
 
