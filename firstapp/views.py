@@ -131,3 +131,7 @@ def home(request):
 def about(request):
     return render(request, "firstapp/about.html")
 
+def formView(request):
+    return render(request, "firstapp/form.html")
+
+

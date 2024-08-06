@@ -7,6 +7,8 @@ urlpatterns = [
     path("home", home, name="home-page"),
     path("about", about, name="about-page"),
 
+    path("form", formView, name="form-page")
+
 ]
 
 
