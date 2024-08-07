@@ -1,6 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
 
 
 
@@ -131,7 +130,25 @@ def home(request):
 def about(request):
     return render(request, "firstapp/about.html")
 
+
+
 def formView(request):
+    if request.method == "POST":
+        print(request.POST)
+        email = request.POST["email"]
+        username = request.POST["username"]
+        password = request.POST["password"]
+        contact = request.POST["contact"]
+
+        context = {
+            "email" : email,
+            "username" : username,
+            "password" : password,
+            "contact" : contact,
+        }
+
+        return render(request, "firstapp/form.html", context)
+        
     return render(request, "firstapp/form.html")
 
 

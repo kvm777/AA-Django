@@ -5,29 +5,39 @@
 <h1>this is form page</h1>
 
 
-<form class="container card shadow col-6" action="" >
+<form class="container card shadow col-6" action="{% url 'form-page' %}" enctype="multipart/form-data" method="post">
+
+    {% csrf_token %}
 
     <div class="mb-3">
         <label class="form-label">Email address</label>
-        <input type="email" class="form-control " >
+        <input type="email" class="form-control" name="email">
     </div>
 
     <div class="mb-3">
         <label class="form-label">Name</label>
-        <input type="text" class="form-control " >
+        <input type="text" class="form-control" name="username">
     </div>
 
     <div class="mb-3">
         <label class="form-label">Password</label>
-        <input type="password" class="form-control " >
+        <input type="password" class="form-control"  name="password">
     </div>
 
     <div class="mb-3">
         <label class="form-label">Contact number</label>
-        <input type="number" class="form-control " >
+        <input type="number" class="form-control" name="contact">
     </div>
 
+    <input type="submit" class="btn btn-success m-3 w-50 mx-auto" >
+
 </form>
+
+<h1>{{email}}</h1>
+<h1>{{username}}</h1>
+<h1>{{password}}</h1>
+<h1>{{contact}}</h1>
+
 
 {% endblock %}
 
