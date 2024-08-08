@@ -152,3 +152,32 @@ def formView(request):
     return render(request, "firstapp/form.html")
 
 
+
+def calculator(request):
+    if request.method == "POST":
+        value1 = int(request.POST["num1"])
+        value2 = int(request.POST["num2"])
+
+        # value1 = int(value1)
+        # value2 = int(value2)
+
+        sumValue = value1 + value2
+        subValue = abs(value1 - value2)
+        productValue = value1 * value2
+        divValue = value1 / value2
+
+        context = {
+            "value1": value1,
+            "value2" : value2,
+            "sumValue":sumValue,
+            "subValue": subValue,
+            "productValue" : productValue,
+            "divValue" : divValue
+        }
+
+        return render(request, "firstapp/calculator.html", context)
+
+
+        ...
+    return render(request, "firstapp/calculator.html")
+

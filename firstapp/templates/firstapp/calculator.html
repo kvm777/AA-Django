@@ -1,0 +1,36 @@
+{% extends "firstapp/index.html" %}
+
+{% block content %}
+
+<h1 class="text-center">this is calculator page</h1>
+
+
+<form class="container card shadow col-6" action="{% url 'calculator-page' %}" enctype="multipart/form-data" method="post">
+
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label class="form-label">1st number</label>
+        <input type="text" class="form-control" name="num1" value="{{value1}}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">2nd number</label>
+        <input type="text" class="form-control" name="num2" value="{{value2}}">
+    </div>
+
+    <input type="submit" value="Fetch the result" class="btn btn-success m-3 w-50 mx-auto" >
+
+</form>
+
+{% if value1 %}
+
+    <h1>the sum of {{value1}} and {{value2}} is {{sumValue}}</h1>
+    <h1>the difference btw {{value1}} and {{value2}} is {{subValue}}</h1>
+    <h1>the product of {{value1}} and {{value2}} is {{productValue}}</h1>
+    <h1>the division of {{value1}} and {{value2}} is {{divValue}}</h1>
+
+{% endif %}
+
+
+{% endblock %}
