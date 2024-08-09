@@ -117,7 +117,7 @@ studentsData =  [
 
 
 def index(request):
-    return render(request, "firstapp/index.html",{ "studentsData": studentsData})
+    return render(request, "index.html", { "studentsData": studentsData})
 
 
 def main(request):
